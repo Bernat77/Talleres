@@ -48,6 +48,10 @@ public class Vehiculo {
     public String getModelo() {
         return modelo;
     }
+
+    public int getMatricula() {
+        return matricula;
+    }
     
     public Cliente getCliente(){
         Cliente hola=cliente;

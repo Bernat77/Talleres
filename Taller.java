@@ -85,6 +85,7 @@ public class Taller {
         for(int i = 0;i<coches.size();i++){
             System.out.println(coches.get(i).getMarca() +
                     " "+ coches.get(i).getModelo() + 
+                    " "+ coches.get(i).getMatricula() +
                     " "+ coches.get(i).getCliente().getNombre());
         }    
     }
