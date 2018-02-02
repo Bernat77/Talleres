@@ -68,7 +68,9 @@ public class Vehiculo {
         return hola;
     }
     
-    
-    
+    public void vehiculoInfo(Vehiculo coche){
+        System.out.println("Matricula: "+coche.getMatricula()
+            +" Marca: "+coche.getMarca()+" Propietario: "+coche.getCliente());
+    }
     
 }

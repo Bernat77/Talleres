@@ -28,8 +28,7 @@ public class RedTaller {
     }
 
     public static void main(String[] args) {
-        
-  
+
     }
 
     public Cliente crearCliente(int dni, String nom, String fecha, int tlf) {
@@ -59,32 +58,49 @@ public class RedTaller {
                     + " " + clientes.get(i).getDni());
         }
     }
-    
+
     public void reportVehiculos() {
-        for(int i = 0; i< coches.size();i++){
+        for (int i = 0; i < coches.size(); i++) {
             System.out.print(coches.get(i).getMarca()
-            +" "+coches.get(i).getModelo()+" "+coches.get(i).getMatricula()
-            +" "+coches.get(i).getCliente().getNombre());
+                    + " " + coches.get(i).getModelo() + " " + coches.get(i).getMatricula()
+                    + " " + coches.get(i).getCliente().getNombre());
         }
     }
-    
+
     public void reportTalleres() {
-        for(int i = 0;i<talleres.size();i++){
+        for (int i = 0; i < talleres.size(); i++) {
             System.out.print(talleres.get(i).getNombre()
-            +" "+talleres.get(i).getCodi()
-            +" "+talleres.get(i).getTelefono());
+                    + " " + talleres.get(i).getCodi()
+                    + " " + talleres.get(i).getTelefono());
         }
     }
-    
-    public void busquedadni(String dato,ArrayList array){
-        
-        
+
+    public Cliente busquedadni(int dni, ArrayList array) {
+        for(int i = 0;i<clientes.size();i++){
+            if(clientes.get(i).getDni()==dni){
+                return clientes.get(i);                
+            }
+        }
+        return null;
     }
+
     
-    public  
+
+    public Vehiculo busquedaMatricula(int matricula, ArrayList array) {
+
+        for (int i = 0; i < coches.size(); i++) {
+            if (coches.get(i).getMatricula() == matricula) {
+                return coches.get(i);
+            }
+
+}
+            return null;
+        }
     
-    public void infoCliente(String dni){
-        
+    
+
+    public void infoCliente(String dni) {
+
     }
 
 }

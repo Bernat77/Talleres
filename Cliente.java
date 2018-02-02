@@ -81,6 +81,11 @@ public class Cliente {
         }
     }
     
+    public void clienteInfo(Cliente cliente){
+        System.out.println("DNI: "+cliente.getDni()+
+                " Nombre: "+cliente.getNombre()+"Telefono: "+cliente.getTelefono());
+    }
+    
     
     
 } 

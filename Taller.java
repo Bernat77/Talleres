@@ -90,4 +90,10 @@ public class Taller {
         }    
     }
     
+    public void tallerInfo(Taller taller){
+        System.out.println("Taller: "+taller.getNombre()+" Código: "
+                +taller.getCodi()+" Dirección: "+taller.getDireccion()
+                +" Telf: "+taller.getTelefono());
+    }
+    
 }
