@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package redtaller;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +12,7 @@ import java.util.ArrayList;
  * @author dam1a14
  */
 public class Taller {
+
     private int codi;
     private String nombre;
     private String direccion;
@@ -23,7 +25,7 @@ public class Taller {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        coches=new ArrayList<Vehiculo>();
+        coches = new ArrayList<>();
     }
 
     public int getCodi() {
@@ -69,31 +71,30 @@ public class Taller {
     public void setRedtaller(RedTaller redtaller) {
         this.redtaller = redtaller;
     }
-    
-    public void addVehiculo(Vehiculo coche){
+
+    public void addVehiculo(Vehiculo coche) {
         coches.add(coche);
+        coche.setReparandose(true);
         coche.setTaller(this);
     }
-    
-    public void removeVehiculo(Vehiculo coche){
+
+    public void removeVehiculo(Vehiculo coche) {
         coches.remove(coche);
+        coche.setReparandose(false);
         coche.setTaller(null);
     }
-    
-    public void reportVehiculos(){
-        System.out.println(nombre);
-        for(int i = 0;i<coches.size();i++){
-            System.out.println(coches.get(i).getMarca() +
-                    " "+ coches.get(i).getModelo() + 
-                    " "+ coches.get(i).getMatricula() +
-                    " "+ coches.get(i).getCliente().getNombre());
-        }    
+
+    public void reportVehiculos() {
+        System.out.println("--------------Vehiculos en " + nombre + "--------------");
+        for (int i = 0; i < coches.size(); i++) {
+            coches.get(i).vehiculoInfo();
+        }
     }
-    
-    public void tallerInfo(Taller taller){
-        System.out.println("Taller: "+taller.getNombre()+" Código: "
-                +taller.getCodi()+" Dirección: "+taller.getDireccion()
-                +" Telf: "+taller.getTelefono());
+
+    public void tallerInfo() {
+        System.out.println("Taller: " + nombre + ", Código: "
+                + codi + ", Dirección: " + direccion
+                + ", Telf: " + telefono);
     }
-    
+
 }

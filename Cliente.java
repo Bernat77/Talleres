@@ -1,10 +1,9 @@
-
 package redtaller;
+
 import java.util.ArrayList;
 
-
 public class Cliente {
-    
+
     private int dni;
     private String nombre;
     private String fechalta;
@@ -63,29 +62,27 @@ public class Cliente {
     public ArrayList<Vehiculo> getCoches() {
         return coches;
     }
-    
-    public void addVehiculo(Vehiculo coche){
+
+    public void addVehiculo(Vehiculo coche) {
         coches.add(coche);
         coche.setCliente(this);
     }
-    
-    public void removeVehiculo(Vehiculo coche){
+
+    public void removeVehiculo(Vehiculo coche) {
         coches.remove(coche);
         coche.setCliente(null);
     }
-    
-    public void reportVehiculos(){
-        for(int i = 0;i<coches.size();i++){
-            System.out.print(coches.get(i).getMarca() +
-                    " "+ coches.get(i).getModelo());
+
+    public void reportVehiculos() {
+        System.out.println("--------------Vehiculos de " + nombre + "--------------");
+        for (int i = 0; i < coches.size(); i++) {
+            coches.get(i).vehiculoInfo();
         }
     }
-    
-    public void clienteInfo(Cliente cliente){
-        System.out.println("DNI: "+cliente.getDni()+
-                " Nombre: "+cliente.getNombre()+"Telefono: "+cliente.getTelefono());
+
+    public void clienteInfo() {
+        System.out.println("DNI: " + dni
+                + ", Nombre: " + nombre + ", Telefono: " + telefono);
     }
-    
-    
-    
-} 
+
+}
